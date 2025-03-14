@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scene container styles */
+#scene-container {
+    @apply fixed inset-0;
+    z-index: 0;
+}
+
+#scene-container canvas {
+    @apply w-full h-full;
+    position: absolute;
+}
+
+/* Content overlay styles */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    pointer-events: none; /* Allow clicking through to the 3D scene by default */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Re-enable pointer events for interactive elements */
+.interactive-content {
+    pointer-events: auto;
+    position: relative;
+}
+
+/* Custom component classes */
+@layer components {
+    .btn-primary {
+        @apply px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors;
+    }
+    
+    .section {
+        @apply py-12 px-4 sm:px-6 lg:px-8;
+    }
+
+    .backdrop-panel {
+        @apply bg-gray-800/60 backdrop-blur-sm rounded-lg p-8 mt-12 mx-auto max-w-2xl;
+        pointer-events: auto;
+    }
+
+    .nav-container {
+        @apply bg-gray-800/60 backdrop-blur-sm;
+        pointer-events: auto;
+    }
+
+    .footer-container {
+        @apply bg-gray-800/60 backdrop-blur-sm mt-auto;
+        pointer-events: auto;
+    }
+} 

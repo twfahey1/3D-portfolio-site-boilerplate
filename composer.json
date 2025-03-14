@@ -1,0 +1,20 @@
+{
+    "name": "your-name/3d-portfolio-site-boilerplate",
+    "description": "A reusable 3D portfolio site template with Three.js, PHP, and modern web technologies",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "symfony/console": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "npm install"
+        ],
+        "serve": "php -S localhost:8000 -t public"
+    }
+} 
